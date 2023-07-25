@@ -43,7 +43,7 @@ async function getToken() {
 }
 
 async function updateWeather() {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&appid=${weatherApi}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Lille,fr&appid=${weatherApi}&units=metric`;
     const response = await fetch(url);
     const json = await response.json();
     const weatherIcon = document.getElementById('weatherImg');
@@ -75,7 +75,7 @@ async function updateWeather() {
             weatherIcon.src = './images/weather/atmosphere.svg';
             break;
     }
-    document.getElementById('weather').innerHTML = `It's currently ${Math.round(json.main.temp)}°C (${json.weather[0].main}) in Paris.`;
+    document.getElementById('weather').innerHTML = `It's currently ${Math.round(json.main.temp)}°C (${json.weather[0].main}) in Lille.`;
 }
 
 async function updateGithub() {
